@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Splash Page</title>
+</head>
+<body>
+    <a href="http://127.0.0.1:5000/">Home</a>
+
+    <p>
+        <h3>Already a user? Sign in</h3>
+
+        <form action="/welcome/" method="post">
+        <h5>User Name</h5>
+        <input name='username'>
+        <h5>Password</h5>
+        <input name='password'>
+        <button name="welcompage" type="submit">Sign In</button>
+        <h5>{{ signInMessage }}</h5>
+        </form>
+    </p>
+    <br>
+    <p>
+        <h3>Not a user? Register</h3>
+        <form action="/register/" method="post">
+        <h5>User Name</h5>
+        <input name='username'>
+        <h5>Password</h5>
+        <input name='password'>
+        <h5>Phone Number For Alerts</h5>
+        <input name='phoneNumber'>        
+        <button name="signupUser" type="submit">Sign Up</button>
+        <h5>{{ signUpMessage }}</h5>
+        <!-- {%for data in queryMessage%}
+        <h5>{{ data }}</h5>
+        {% endfor %}
+        <br> -->
+        <!-- </form> -->
+    </p>
+    <br>
+    <p>
+        <h3>Load Data Into DynamoDB</h3>
+        <form action="/load/" method="post">
+        <button name="loadData" type="submit">Load</button>
+        <h5>{{ loadMessage }}</h5>
+        </form>
+    </p>
+    <br>
+    <p>
+        <h3>Delete All Data From Database</h3>
+        <form action="/delete/" method="post">
+        <button name="deleteData" type="submit">Delete</button>
+        <h5>{{ deleteMessage }}</h5>
+    </form>
+    </p>
+    
+</body>
+</html>

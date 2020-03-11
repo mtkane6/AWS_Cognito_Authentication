@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Query</title>
+</head>
+
+<body>
+    <p>
+        <h3>Fetch news about city:</h3>
+        <form action="/query/" method="post">
+            <h5>City name</h5>
+            <input name='city'>
+            <button name="querycity" type="submit">Search</button>
+                <h5>{{ message }}</h5>
+        </form>
+    </p>
+    
+</body>
