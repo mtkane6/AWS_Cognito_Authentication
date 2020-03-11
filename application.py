@@ -71,9 +71,12 @@ def SignUpUser():
     
 @application.route('/query/', methods=['POST'])
 def SearchArticles():
-    city = request.form['city']
-    GetNews.GetNewsApi(city)
-    return render_template('querypage.html', message = "success")
+    city = request.form['city'].replace(" ", "+")
+    returnList = GetNews.GetNewsApi(city)
+    if len(returnList) > 0:
+        return render_template('querypage.html', message = returnList)
+    else:
+        return render_template('querypage.html', message = ["Could not locate news for that city."])
 
 
 

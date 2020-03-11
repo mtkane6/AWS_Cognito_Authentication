@@ -13,7 +13,10 @@
             <h5>City name</h5>
             <input name='city'>
             <button name="querycity" type="submit">Search</button>
-                <h5>{{ message }}</h5>
+                <!-- <h5>{{ message }}</h5> -->
+                {%for data in message%}
+                <h5>{{ data }}</h5>
+                {% endfor %}
         </form>
     </p>
     
